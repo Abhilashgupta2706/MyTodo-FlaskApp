@@ -49,12 +49,11 @@ def update(srno):
 
 @app.route('/delete/<int:srno>')
 def delete(srno):
-    delete = ToDo.query.filter_by(srno=srno).first()
-    db.session.delete(delete)
+    todo = ToDo.query.filter_by(srno=srno).first()
+    db.session.delete(todo)
     db.session.commit()
     return redirect('/')
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
-    # app.run(debug=Flase,host='0.0.0.0')
+    app.run(debug=False, port=2001)
