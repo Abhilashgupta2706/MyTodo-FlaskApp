@@ -56,4 +56,5 @@ def delete(srno):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=2001)
+    # app.run(debug=True, port=2001)
+    app.run(debug=Flase, host='0.0.0.0')
