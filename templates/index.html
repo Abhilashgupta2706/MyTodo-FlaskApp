@@ -17,7 +17,7 @@
     </form>
 </div>
 <div class="container mt-3">
-    <h2>Your ToDo</h2>
+    <h2>Todo list</h2>
     <table class="table">
         <thead>
             <tr>
@@ -41,8 +41,8 @@
                 <td>{{todo.desc}}</td>
                 <td>{{todo.data_created}}</td>
                 <td>
-                    <a href="/update/{{todo.srno}}" type="button" class="btn btn-dark btn-sm mx-1">Update</a>
-                    <a href="/delete/{{todo.srno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
+                    <a href="/update/{{todo.srno}}" type="button" class="btn btn-dark btn-sm my-1 mx-1">Update</a>
+                    <a href="/delete/{{todo.srno}}" type="button" class="btn btn-outline-dark btn-sm my-1 mx-1">Delete</a>
                 </td>
             </tr>
             {% endfor %}
