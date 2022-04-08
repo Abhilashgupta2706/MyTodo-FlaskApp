@@ -1,0 +1,40 @@
+WARNING: No DATA from your previous LOCAL DATABSE will be imported. This will create a new EMPTY DATABASE file which will be hosted online
+
+Note: Add this to you App env
+    > pip install psycopg2
+    > and run pip freeze > requirements.txt
+
+Open cmd prompt in your PC and login to Heroku Account
+> Heroku login
+
+Step 1: Add addon to your Heroku app
+    > heroku addons:create heroku-postgresql:hobby-dev --app app_name
+
+Step 2: Get URL for your databse
+    > heroku config --app app_name (Returns URL of your databse)
+        ~ Make sure to chnage "postgres://...." to  "postgresql://...."
+
+            ```
+            SQLAlchemy 1.4 removed the deprecated postgres dialect name, the name postgresql must be used instead now. The dialect is the part before the :// in the URL. SQLAlchemy 1.3 and earlier showed a deprecation warning but still accepted it.
+
+            To fix this, rename postgres:// in the URL to postgresql://.
+            ```
+
+Step 3:  Past the URL in your flask file (Usually named as - app.py)
+    > app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///todo.db"
+    > ---TO---
+    > app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://rkmfvxbfylzspi:0cbd6b21fd5e049fd451fa8114bd7c8ef48d398e4c9fd432f3ebe64ecea8ed67@ec2-3-230-122-20.compute-1.amazonaws.com:5432/d4ja223hikkfbo"
+
+    Warning: Postgresql does not allow you to add char count for db.TEXT field. If you have added any while creating Database Model "Remove It"
+
+Step 4: Push the changes and let heroku deploy the changes
+    Warning:  you will get a "500 Inernal Server Error", don't worry you are just few steps away to solve that. 
+
+
+Step 5: Migrate your database like you did for SQLite (Only once)
+    > heroku run python --app app_name
+        >>> from falsk_app_name import databse_name
+        >>> databse_name.create_all()
+
+
+CONGRATULATIONS you have created a new databse for your app.
