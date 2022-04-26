@@ -1,7 +1,6 @@
 # Todo list with Flask API
 
 ### How to use
-[Click here](https://flask-todo-web-app.herokuapp.com/) to open the web app 😉
 *  Warning: May be down due to some Technical Issue (Report if you face any)
 *  Add your Task and Description
 *  You can also Update and Delete them as per your requirement
