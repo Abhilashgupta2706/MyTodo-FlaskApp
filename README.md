@@ -7,7 +7,7 @@
 *  You can also Update and Delete them as per your requirement
 
 ### About this project
-I made this project when I started learning Flask API. I have also used Bootstrap fro Designing. This is a project from [YouTube](https://youtu.be/oA8brF3w5XQ)
+I made this project when I started learning Flask API. I have also used Bootstrap for Designing. This is a project from [YouTube](https://youtu.be/oA8brF3w5XQ)
 
 ### Preview
 ![actual_preview](https://github.com/Abhilashgupta2706/MyTodo-FlaskApp/blob/main/files/preview%20imgs/preview.png)
